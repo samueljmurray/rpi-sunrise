@@ -1,0 +1,10 @@
+v2.
+{<<"/home/pi/rpi-sunrise/_build/dev/lib/connection/ebin/Elixir.Connection.beam">>,
+ 'Elixir.Connection',module,<<"lib/connection.ex">>,
+ ['Elixir.String.Chars','Elixir.Keyword','Elixir.Behaviour',
+  'Elixir.Kernel.Typespec','Elixir.Module','Elixir.GenServer',
+  'Elixir.Protocol','Elixir.List',erlang,'Elixir.Kernel',
+  'Elixir.ArgumentError','Elixir.Kernel.Utils'],
+ [global,gen,'Elixir.System',gen_server,proc_lib,'Elixir.Code',code,
+  error_logger,'Elixir.Process'],
+ [],nil}.
