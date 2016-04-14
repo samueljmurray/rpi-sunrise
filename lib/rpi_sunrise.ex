@@ -12,7 +12,7 @@ defmodule RpiSunrise do
       # Start the Ecto repository
       supervisor(RpiSunrise.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(RpiSunrise.Worker, [arg1, arg2, arg3]),
+      worker(RpiSunrise.Alarm, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

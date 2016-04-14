@@ -22,6 +22,22 @@ defmodule RpiSunrise.Mixfile do
                     :phoenix_ecto, :postgrex]]
   end
 
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    RPi.Endpoint.start
+
+    children = [
+      # Define workers and child supervisors to be supervised
+      # worker(MyApp.Worker, [arg1, arg2, arg3])
+    ]
+
+    # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
+    # for other strategies and supported options
+    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
   defp elixirc_paths(_),     do: ["lib", "web"]
@@ -36,7 +52,8 @@ defmodule RpiSunrise.Mixfile do
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:exrm, "~> 1.0.3"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
